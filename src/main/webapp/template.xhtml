@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>        
+        <link href="./css/default.css" rel="stylesheet" type="text/css" />
+        <title>#{facesContext.externalContext.initParameterMap.appTitle}</title>
+        <style type="text/css"></style>
+        <script language="javascript"></script>
+    </h:head>
+    <h:body> 
+        <p:layout fullPage="true">  
+
+            <p:dialog modal="true" id="statusDialogID" widgetVar="statusDialog" header="Executing..." >
+                <p:graphicImage value="/design/ajaxloadingbar.gif"/>
+            </p:dialog>
+            <p:layoutUnit position="north" style="padding:0 0 !important">
+                <div id="header" style="background-image:url(imagens/logo.png); background-repeat:no-repeat; height:91px; background-position:-10px -40px;">
+                    <div id="area_restrita"></div>
+                </div>
+            </p:layoutUnit>  
+
+            <!--Painel esquerdo-->
+            <p:layoutUnit position="west" size="300" header="#{facesContext.externalContext.initParameterMap.appTitle} | Menu" resizable="true" closable="true" collapsible="true">              
+                <ui:include src="/menu.xhtml" />
+            </p:layoutUnit>  
+
+            <!--Painel Direito-->
+            <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true">  
+                <h:outputText value="Right unit content." />  
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center" style="border:0px;">  
+                <ui:insert name="body">
+                </ui:insert>
+            </p:layoutUnit>  
+
+            <p:layoutUnit position="south" >  
+                <center>
+                    <ui:insert name="bottom">Copyright by Tom</ui:insert> 
+                </center>
+            </p:layoutUnit>  
+
+        </p:layout> 
+
+    </h:body>
+</html>

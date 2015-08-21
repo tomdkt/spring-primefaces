@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:form id="MenuPrincipal" style="height: 33px;">
+        <p:panelMenu>
+            <p:submenu label="Dados">
+                <p:submenu label="Cadastro">
+                    <p:menuitem value="Cadastro de Empresas" onclick="document.location.href='empresa.jsf';" ajax="true"/><!--
+-->                    <p:menuitem  value="Cadastro de Filiais" onclick="document.location.href='filial.jsf';"/>
+                </p:submenu>
+            </p:submenu>
+            <p:submenu label="Logs">
+                
+            </p:submenu>
+            <p:submenu label="DashBoard">
+                <p:menuitem  value="DashBoard" onclick="document.location.href='dashboard.jsf';"/>
+            </p:submenu>
+            <p:submenu label="Configurações">
+                <p:menuitem  value="Cadastro de Usuario" onclick="document.location.href='cadastroUsuario.jsf';"/>
+            </p:submenu>
+            <p:submenu label="Logout">
+                <f:facet name="label">
+                    <h:panelGroup>
+                        <h:outputText value=""/>
+                    </h:panelGroup>
+                </f:facet>
+<!--                <p:menuitem value="Logout" onclick="if (!confirm('Deseja realmente fazer logoff?')) return false;" action="#{loginMB.loggout}"/>-->
+
+                
+            </p:submenu>
+        </p:panelMenu> 
+    </h:form>  
+</html>
